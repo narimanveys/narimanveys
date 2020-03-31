@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 )
 
 export class UserInfoService {
-    userInfoSubject = new BehaviorSubject(null);
+    userInfoSubject = new BehaviorSubject<UserInfo>(null);
     constructor(private http: HttpClient){
     }
   

@@ -15,6 +15,11 @@ import { TransactionPageComponent } from './transaction-page/transaction-page.co
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { TransactionhistoryPageComponent } from './transactionhistory-page/transactionhistory-page.component';
 import { CreatetransactionPageComponent } from './createtransaction-page/createtransaction-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { CreatetransactionPageComponent } from './createtransaction-page/createt
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatAutocompleteModule
   ],
   providers: [
     {

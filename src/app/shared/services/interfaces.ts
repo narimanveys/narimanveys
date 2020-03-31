@@ -29,3 +29,8 @@ export interface PostTransaction{
     username: string
     amount: number
 }
+
+export interface SearchUser{
+    id: number
+    name: string
+}
