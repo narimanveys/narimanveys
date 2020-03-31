@@ -1,0 +1,50 @@
+<form class="card" [formGroup] = "form">
+    <div class="card-content">
+        <span class="card-title">Create transaction</span>
+        <div class="input-field">
+            <input 
+                formControlName = "username"
+                id="username" 
+                type="text"
+                [ngClass] = "{'invalid': form.get('username').invalid && form.get('username').touched}"
+                >
+            <label for="username"> Enter User</label>
+            <span class="helper-text red-text" *ngIf="form.get('username').invalid && form.get('username').touched">
+                <span *ngIf="form.get('username').errors['required']">User can't be empty</span>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">textsms</i>
+                  <input type="text" id="autocomplete-input" class="autocomplete">
+                  <label for="autocomplete-input">Autocomplete</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="input-field">
+            <input 
+            formControlName = "amount"
+            id="amount"
+            type="number" 
+            [ngClass] = "{'invalid': form.get('amount').invalid && form.get('amount').touched}"
+            >
+            <label for="amount"> Amount</label>
+            <span class="helper-text red-text" *ngIf="form.get('amount').invalid && form.get('amount').touched">
+                <span *ngIf="form.get('amount').errors['amount']">Amount can't be empty</span>
+                  <!-- <span *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredLength']">
+                    Password length isn't correct(min acceptable length: {{form.get('password').errors['minlength']['requiredLength']}})
+                </span> -->
+            </span>
+        </div>
+    </div>
+    <div class="card-action">
+        <button 
+            type = "submit" 
+            class="modal-action btn waves-effect" 
+            [disabled] = "form.invalid">Submit</button>
+
+    </div>
+</form>

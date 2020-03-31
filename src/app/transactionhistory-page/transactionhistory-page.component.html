@@ -1,0 +1,40 @@
+<div class="page-title">
+    <h4>User transactions</h4>
+    <button class="waves-effect waves-light btn grey darken-1" routerLink = "/create">New Transaction</button>
+</div>
+
+<div class="row" *ngIf="transactions$ | async as transactions; else loader">
+            <table class="highlight mb2" *ngIf="transactions.lenght!==0; else empty">
+                <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>User Name</td>
+                    <td>Amount</td>
+                    <td>Balance</td>
+                </tr>
+                </thead>
+                
+                    <tr 
+                        *ngFor="let transaction of transactions"
+                
+                        class="collection-item" 
+                    >
+                    <td>  {{transaction.date}} </td>
+                    <td>  {{transaction.username}} </td>
+                    <td>  {{transaction.amount}} </td>
+                    <td>  {{transaction.balance}} </td>
+                    </tr>
+                
+            </table>
+            <ng-template #empty>
+                <div class="center">
+                    There is no any transaction yet 
+                </div>
+            </ng-template>
+</div> 
+<ng-template #loader>
+    <app-loader></app-loader>
+</ng-template>
+
+
+

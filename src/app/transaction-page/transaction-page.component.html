@@ -1,0 +1,31 @@
+<div class="page-title">
+    <h4>User transactions</h4>
+    <button class="waves-effect waves-light btn grey darken-1" routerLink = "/create">New Transaction</button>
+</div>
+
+<div class="row" *ngIf="!loading">
+    <div class="col s12">
+        <div class="striped highlight">
+            <table>
+                <tr>
+                    <td>Date</td>
+                    <td>User Name</td>
+                    <td>Amount</td>
+                    <td>Balance</td>
+                </tr>
+
+                <tr
+                    *ngFor="let transaction of transactions"
+                
+                    class="collection-item"
+                >
+                <td>  {{transaction.date}} </td>
+                <td>  {{transaction.username}} </td>
+                <td>  {{transaction.amount}} </td>
+                <td>  {{transaction.balance}} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div> 
+<app-loader *ngIf="loading"></app-loader>

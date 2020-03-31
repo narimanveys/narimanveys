@@ -1,0 +1,6 @@
+<p>First name: <input [(ngModel)]="model.firstName" /></p>
+<p>Last name: <input [(ngModel)]="model.lastName"/></p>
+
+<p>Full name: {{model.firstName}} {{model.lastName}}</p>
+
+<button (click)="capitalize()">Capitalize</button>
